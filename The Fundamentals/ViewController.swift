@@ -10,9 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var theLable: UILabel!
+    
+    var tapCount = 0
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        tapCount = tapCount + 1
+        
+        if tapCount >= 10 {
+            theLable.text = "You're tapped out!"
+        }
+    }
+    
+    @IBAction func namechange(_ sender: Any) {
+        theLable.text = "Buttons are cool!"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        theLable.text = "Hello World!"
     }
 
     override func didReceiveMemoryWarning() {
